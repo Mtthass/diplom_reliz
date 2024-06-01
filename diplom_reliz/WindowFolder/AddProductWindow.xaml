@@ -1,0 +1,100 @@
+﻿<Window x:Class="diplom_reliz.WindowFolder.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom_reliz.WindowFolder"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         WindowStyle="None"
+        Title="AddUserWindow" Height="550" Width="552" MaxHeight="550" MinHeight="550" MaxWidth="552" MinWidth="552">
+    <Grid Margin="0,0,-8,-8" Background="#FF88B6D6">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="185*"/>
+            <RowDefinition Height="96*"/>
+            <RowDefinition Height="96*"/>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="56*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+                       x:Name="DialogTitleTb"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       FontWeight="SemiBold"
+                       FontSize="24" Margin="132,10,118,136" ><Run Text="Добавление "/><Run Text="товар"/><Run Text="а"/></TextBlock>
+
+        <materialDesign:PackIcon Kind="Cart" Width="342" Height="131" Foreground="Black" VerticalAlignment="Center" Margin="109,52,0,10"/>
+
+        <Button
+        Tag="Plus" Content="Добавить"
+        x:Name="FormBtn" Height="Auto"
+        Margin="220,16,204,10" Grid.Row="4"/>
+
+
+        <TextBox x:Name="Tb1" HorizontalAlignment="Left" Height="28" Margin="15,62,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" materialDesign:HintAssist.Hint="Имеющееся кол-во" 
+                             Foreground="Black" VerticalContentAlignment="Center"
+                             ToolTip="юр адресс" Background="{x:Null}" />
+
+        <TextBox x:Name="Tb2" HorizontalAlignment="Left" Height="28" Margin="15,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" materialDesign:HintAssist.Hint="Название товара" 
+                             Foreground="Black" VerticalContentAlignment="Center"
+                             ToolTip="название товара" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top"
+                            Orientation="Horizontal" Height="24" Width="33">
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                            Height="24"
+                            Margin="8 0 0 0"
+                            Width="22"
+                            Content="{md:PackIcon Kind=Close}" Background="White" Click="Button_Click"/>
+        </StackPanel>
+        <TextBox x:Name="Tb2_Copy" HorizontalAlignment="Left" Height="28" Margin="192,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" md:HintAssist.Hint="Тип товара" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <TextBox x:Name="Tb2_Copy1" HorizontalAlignment="Left" Height="28" Margin="192,62,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" md:HintAssist.Hint="Стоимость" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <TextBox x:Name="Tb2_Copy2" HorizontalAlignment="Left" Height="28" Margin="398,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" md:HintAssist.Hint="Краткое описание" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="15,10,395,52" Grid.Row="1" ><Run Text="Название "/></TextBlock>
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="192,10,218,52" Grid.Row="1" ><Run Text="Категория "/></TextBlock>
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="398,10,12,52" Grid.Row="1" ><Run Text="Описание "/></TextBlock>
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="15,10,395,52" Grid.Row="2" ><Run Text="Количество "/></TextBlock>
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="192,10,188,43" Grid.Row="2" ><Run Text="Стоимость за ед. "/></TextBlock>
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

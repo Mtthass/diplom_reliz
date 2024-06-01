@@ -1,0 +1,72 @@
+﻿<Page x:Class="diplom_reliz.PagesFolder.PurchasesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:diplom_reliz.PagesFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PurchasesPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600*"/>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="203*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Button
+         Content="Добавить"
+         Margin="8,10,3.5,6" Height="24" Width="78" Click="Button_Click" FontSize="6" Grid.Row="1" Grid.Column="2"/>
+        <Button
+         Content="Редактировать"
+         Margin="16,10,10,6" Height="24" Width="78" FontSize="6" Grid.Row="1" Grid.Column="1"/>
+
+        <DataGrid x:Name="ListPurchaseDG"
+                  Foreground="White"
+        AutoGenerateColumns="False"
+        IsReadOnly="True"
+        ItemsSource="{Binding Purchase}" Margin="10,10,3.5,1" FontSize="15" Grid.ColumnSpan="3">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF041AFF" Offset="0"/>
+                    <GradientStop Color="#FD00E8FF" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.ContextMenu>
+                <ContextMenu/>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+        Binding="{Binding IdPurchase}"
+        Width="50"/>
+                <DataGridTextColumn Header="Дата закупки"
+        Binding="{Binding DatePurchase}"
+        Width="*"/>
+                <DataGridTextColumn Header="Описание"
+        Binding="{Binding DescriptionProduct}"
+        Width="*"/>
+                <DataGridTextColumn Header="Поставщик"
+    Binding="{Binding Supplier.SupplierName}"
+        Width="*"/>
+                <DataGridTextColumn Header="Цена"
+    Binding="{Binding Price}"
+        Width="*"/>
+                <DataGridTextColumn Header="Статус закупки"
+    Binding="{Binding StatusPurchase.NameStatus}"
+        Width="190"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,90 @@
+﻿<Window x:Class="diplom_reliz.WindowFolder.AddDeliveryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom_reliz.WindowFolder"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         WindowStyle="None"
+        Title="AddUserWindow" Height="550" Width="552"  MaxHeight="550" MinHeight="550" MaxWidth="552" MinWidth="552">
+    <Grid Margin="0,0,-8,-8" Background="#FF88B6D6">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="283*"/>
+            <RowDefinition Height="208*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+                       x:Name="DialogTitleTb"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       FontWeight="SemiBold"
+                       FontSize="24" Margin="132,10,118,136" ><Run Text="Добавление Доставки"/><Run/></TextBlock>
+
+        <materialDesign:PackIcon Kind="Car" Width="342" Height="130" Foreground="Black" VerticalAlignment="Center" Margin="109,93,0,60"/>
+
+        <Button
+        Tag="Plus" Content="Добавить"
+        x:Name="FormBtn" Height="Auto"
+        Margin="220,16,204,10" Grid.Row="2"/>
+
+        <ComboBox  HorizontalAlignment="Left" Margin="192,62,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" materialDesign:HintAssist.Hint="Нал/Безнал"
+                  SelectedValuePath=""
+                  SelectedItem="{Binding Role}"
+                  DisplayMemberPath="NameRole" Background="{x:Null}"/>
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top"
+                            Orientation="Horizontal" Height="24" Width="37">
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                            Height="24"
+                            Margin="8 0 0 0"
+                            Width="22"
+                            Content="{md:PackIcon Kind=Close}" Background="White" Click="Button_Click"/>
+        </StackPanel>
+        <TextBox x:Name="Tb2_Copy" HorizontalAlignment="Left" Height="28" Margin="10,60,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" md:HintAssist.Hint="Название заказа" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="10,10,380,118" Grid.Row="1" ><Run Text="Название заказа"/><Run/></TextBlock>
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="192,12,204,131" Grid.Row="1" Text="Способ оплаты" />
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="398,10,-8,121" Grid.Row="1" Text="Способ доставки" />
+        <TextBlock
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="10,110,380,18" Grid.Row="1" ><Run Text="Дата доставки"/><Run/></TextBlock>
+        <TextBox x:Name="Tb2_Copy1" HorizontalAlignment="Left" Height="28" Margin="10,156,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" md:HintAssist.Hint="Когда привезти" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <ComboBox  HorizontalAlignment="Left" Margin="400,63,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" md:HintAssist.Hint="Самовывоз/Доставка"
+            SelectedValuePath=""
+            SelectedItem="{Binding Role}"
+            DisplayMemberPath="NameRole" Background="{x:Null}"/>
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

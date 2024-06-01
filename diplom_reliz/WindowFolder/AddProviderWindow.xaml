@@ -1,0 +1,113 @@
+﻿<Window x:Class="diplom_reliz.WindowFolder.AddProviderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom_reliz.WindowFolder"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         WindowStyle="None"
+        Title="AddUserWindow" Height="550" Width="552" MaxHeight="550" MinHeight="550" MaxWidth="552" MinWidth="550">
+    <Grid Margin="0,0,-47,0" Background="#FF88B6D6">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="185*"/>
+            <RowDefinition Height="96*"/>
+            <RowDefinition Height="96*"/>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="56*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Добавление поставщика"
+                       x:Name="DialogTitleTb"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       FontWeight="SemiBold"
+                       FontSize="24" Margin="87,10,163,136" />
+
+        <materialDesign:PackIcon Kind="DeliveryDining" Width="342" Height="131" Foreground="Black" VerticalAlignment="Center" Margin="82,57,0,5"/>
+
+        <Button
+        Tag="Plus" Content="Добавить"
+        x:Name="FormBtn" Height="Auto"
+        Margin="188,10,235,16" Grid.Row="4"/>
+
+
+        <TextBox x:Name="Tb1" HorizontalAlignment="Left" Height="28" Margin="10,62,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" materialDesign:HintAssist.Hint="Юр. Адресс" 
+                             Foreground="Black" VerticalContentAlignment="Center"
+                             ToolTip="Введите логин" Background="{x:Null}" />
+
+        <TextBox x:Name="Tb2" HorizontalAlignment="Left" Height="28" Margin="10,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" materialDesign:HintAssist.Hint="Название поставщика" 
+                             Foreground="Black" VerticalContentAlignment="Center"
+                             ToolTip="Введите Название" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+
+
+
+        <ComboBox x:Name="Cb1" HorizontalAlignment="Left" Margin="398,65,0,0" Grid.Row="2" VerticalAlignment="Top" Width="155" materialDesign:HintAssist.Hint="Активный/Не активный"
+                    SelectedValuePath="IdRole"
+                  SelectedItem="{Binding Role}"
+                  DisplayMemberPath="NameRole" Background="{x:Null}" Height="25"/>
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top"
+                            Orientation="Horizontal" Height="24" Width="34" Margin="0,0,47,0">
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                            Height="24"
+                            Margin="8 0 0 0"
+                            Width="22"
+                            Content="{md:PackIcon Kind=Close}" Background="White" Click="Button_Click"/>
+        </StackPanel>
+        <TextBox x:Name="Tb2_Copy" HorizontalAlignment="Left" Height="28" Margin="192,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" md:HintAssist.Hint="Контактный номер" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <TextBox x:Name="Tb2_Copy1" HorizontalAlignment="Left" Height="28" Margin="192,62,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" md:HintAssist.Hint="Действующая почта" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <TextBox x:Name="Tb2_Copy2" HorizontalAlignment="Left" Height="28" Margin="398,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" md:HintAssist.Hint="Рабочий сайт" 
+            Foreground="Black" VerticalContentAlignment="Center"
+            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+
+        <TextBlock Text="Название"
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="10,10,419,43" Grid.Row="1" />
+        <TextBlock Text="Телефон"
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="194,10,235,43" Grid.Row="1" />
+        <TextBlock Text="Сайт"
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="398,10,31,43" Grid.Row="1" />
+        <TextBlock Text="Адресс"
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="10,10,419,43" Grid.Row="2" />
+        <TextBlock Text="Почта"
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="192,10,237,43" Grid.Row="2" />
+        <TextBlock Text="Статус"
+            TextWrapping="Wrap"
+            TextAlignment="Left"
+            FontWeight="SemiBold"
+            FontSize="18" Margin="398,10,31,43" Grid.Row="2" />
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

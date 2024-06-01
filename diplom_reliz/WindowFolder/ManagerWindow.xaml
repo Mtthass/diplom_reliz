@@ -1,0 +1,79 @@
+﻿<Window x:Class="diplom_reliz.WindowFolder.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:diplom_reliz.WindowFolder"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="760" Width="1135" MaxHeight="760" MinHeight="760" MaxWidth="1135" MinWidth="1135"
+        Background="Orange">
+
+    <Window.Resources>
+        <!-- Обычный стиль кнопки -->
+        <Style x:Key="NormalButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+            <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+        </Style>
+        <!-- Активный стиль кнопки -->
+        <Style x:Key="ActiveButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+            <Setter Property="Background" Value="{DynamicResource MaterialDesignAccent}"/>
+            <Setter Property="Foreground" Value="LightGreen"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/diplom_reliz;component/ResoureceFolder/Window2.png"/>
+        </Grid.Background>
+
+
+
+        <Frame Content="" x:Name="MainFrame"
+       NavigationUIVisibility="Hidden" Margin="266,90,10,0"/>
+
+        <StackPanel Width="248" HorizontalAlignment="Left" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5,5,0,5">
+                <materialDesign:PackIcon Kind="User"  Width="70" Height="65" Foreground="White"  Margin="10 10"  />
+                <StackPanel>
+                    <TextBlock x:Name="LoginLabel" Foreground="White" Width="130" VerticalAlignment="Center" FontSize="30"/>
+                    <TextBlock  x:Name="RoleLabel" Foreground="White" Width="130" VerticalAlignment="Center" FontSize="18"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
+                <materialDesign:PackIcon Kind="ListBox" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
+                <Button Margin="10 5" Content="Заказы" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
+                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Orders" Click="Orders_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
+                <materialDesign:PackIcon Kind="Money" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
+                <Button Margin="10 5" Content="Платежи" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
+                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Payments" Click="Payments_Click" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top"
+                            Orientation="Horizontal"
+                            Margin="0 8 8 0">
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                            Height="24"
+                            Width="24" 
+                            Content="{materialDesign:PackIcon Kind=Minimize}" Background="White" Click="Button_Click"/>
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                            Height="24"
+                            Width="24"                        
+                            Margin="8 0 0 0"
+                            x:Name="MaximazeOrMinimizeBtn"
+                            Content="{materialDesign:PackIcon Kind=CropSquare}" Background="White" Click="Button_Click_1"/>
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                            Height="24"
+                            Margin="8 0 0 0"
+                            Width="24"
+                            Content="{materialDesign:PackIcon Kind=Close}" Background="White" Click="Button_Click_2"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
