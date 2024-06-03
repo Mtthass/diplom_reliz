@@ -21,11 +21,11 @@ namespace diplom_reliz.DataFolder
         }
     
         public int IdPurchase { get; set; }
-        public System.DateTime DatePurchase { get; set; }
+        public string DatePurchase { get; set; }
         public string DescriptionProduct { get; set; }
-        public int IdSupplier { get; set; }
+        public Nullable<int> IdSupplier { get; set; }
         public string Price { get; set; }
-        public int IdStatusPurchase { get; set; }
+        public Nullable<int> IdStatusPurchase { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

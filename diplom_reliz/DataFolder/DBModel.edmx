@@ -17,7 +17,7 @@
             <PropertyRef Name="IdComment" />
           </Key>
           <Property Name="IdComment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="IdProduct" Type="int" />
           <Property Name="TextComment" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DateComment" Type="date" Nullable="false" />
         </EntityType>
@@ -26,17 +26,17 @@
             <PropertyRef Name="IdDelivery" />
           </Key>
           <Property Name="IdDelivery" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdOrder" Type="int" Nullable="false" />
-          <Property Name="IdMethodDelivery" Type="int" Nullable="false" />
-          <Property Name="DateDelivery" Type="date" Nullable="false" />
-          <Property Name="IdStatusDelivery" Type="int" Nullable="false" />
+          <Property Name="IdOrder" Type="int" />
+          <Property Name="IdMethodDelivery" Type="int" />
+          <Property Name="DateDelivery" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdStatusDelivery" Type="int" />
         </EntityType>
         <EntityType Name="MethodDelivery">
           <Key>
             <PropertyRef Name="IdMethodDelivery" />
           </Key>
           <Property Name="IdMethodDelivery" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdDelivery" Type="int" Nullable="false" />
+          <Property Name="IdDelivery" Type="int" />
           <Property Name="NameMethod" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="MethodPayment">
@@ -44,7 +44,7 @@
             <PropertyRef Name="IdMethodPayment" />
           </Key>
           <Property Name="IdMethodPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdPayment" Type="int" Nullable="false" />
+          <Property Name="IdPayment" Type="int" />
           <Property Name="NameMethod" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderHistory">
@@ -52,34 +52,34 @@
             <PropertyRef Name="IdOrderHistory" />
           </Key>
           <Property Name="IdOrderHistory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdOrder" Type="int" Nullable="false" />
-          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="IdOrder" Type="int" />
+          <Property Name="IdProduct" Type="int" />
           <Property Name="QuantityProduct" Type="int" Nullable="false" />
           <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="AmountOrder" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdOrderStatusHistory" Type="int" Nullable="false" />
+          <Property Name="IdOrderStatusHistory" Type="int" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="IdOrder" />
           </Key>
           <Property Name="IdOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdPurchase" Type="int" Nullable="false" />
-          <Property Name="IdSupplier" Type="int" Nullable="false" />
+          <Property Name="IdPurchase" Type="int" />
+          <Property Name="IdSupplier" Type="int" />
           <Property Name="QuantityProduct" Type="int" Nullable="false" />
-          <Property Name="OrderDate" Type="date" Nullable="false" />
-          <Property Name="IdStatusOrder" Type="int" Nullable="false" />
+          <Property Name="OrderDate" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdStatusOrder" Type="int" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
             <PropertyRef Name="IdPayment" />
           </Key>
           <Property Name="IdPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdOrder" Type="int" Nullable="false" />
-          <Property Name="IdMethodPayment" Type="int" Nullable="false" />
+          <Property Name="IdOrder" Type="int" />
+          <Property Name="IdMethodPayment" Type="int" />
           <Property Name="AmountPayment" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DatePayment" Type="date" Nullable="false" />
-          <Property Name="IdStatusPayment" Type="int" Nullable="false" />
+          <Property Name="DatePayment" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdStatusPayment" Type="int" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -87,9 +87,9 @@
           </Key>
           <Property Name="IdProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameProduct" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CategoryProduct" Type="int" Nullable="false" />
+          <Property Name="CategoryProduct" Type="int" />
           <Property Name="DescriptionProduct" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Purchase">
@@ -97,21 +97,21 @@
             <PropertyRef Name="IdPurchase" />
           </Key>
           <Property Name="IdPurchase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DatePurchase" Type="date" Nullable="false" />
-          <Property Name="DescriptionProduct" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="IdSupplier" Type="int" Nullable="false" />
-          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdStatusPurchase" Type="int" Nullable="false" />
+          <Property Name="DatePurchase" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DescriptionProduct" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdSupplier" Type="int" />
+          <Property Name="Price" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdStatusPurchase" Type="int" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
             <PropertyRef Name="IdReview" />
           </Key>
           <Property Name="IdReview" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="IdProduct" Type="int" />
           <Property Name="ProductEvalution" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TextReview" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DateRecall" Type="date" Nullable="false" />
+          <Property Name="DateRecall" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -125,7 +125,7 @@
             <PropertyRef Name="IdStatusDelivery" />
           </Key>
           <Property Name="IdStatusDelivery" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdDelivery" Type="int" Nullable="false" />
+          <Property Name="IdDelivery" Type="int" />
           <Property Name="NameStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="StatusOrder">
@@ -133,7 +133,7 @@
             <PropertyRef Name="IdStatusOrder" />
           </Key>
           <Property Name="IdStatusOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdOrder" Type="int" Nullable="false" />
+          <Property Name="IdOrder" Type="int" />
           <Property Name="NameStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="StatusOrderHistory">
@@ -141,7 +141,7 @@
             <PropertyRef Name="IdStatusOrderHistory" />
           </Key>
           <Property Name="IdStatusOrderHistory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdOrderHistory" Type="int" Nullable="false" />
+          <Property Name="IdOrderHistory" Type="int" />
           <Property Name="NameStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="StatusPayment">
@@ -149,7 +149,7 @@
             <PropertyRef Name="IdStatusPayment" />
           </Key>
           <Property Name="IdStatusPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdPayment" Type="int" Nullable="false" />
+          <Property Name="IdPayment" Type="int" />
           <Property Name="NameStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="StatusPurchase">
@@ -157,7 +157,7 @@
             <PropertyRef Name="IdStatusPurchase" />
           </Key>
           <Property Name="IdStatusPurchase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdPurchase" Type="int" Nullable="false" />
+          <Property Name="IdPurchase" Type="int" />
           <Property Name="NameStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="StatusSupplier">
@@ -165,7 +165,7 @@
             <PropertyRef Name="IdStatusSupplier" />
           </Key>
           <Property Name="IdStatusSupplier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdSupplier" Type="int" Nullable="false" />
+          <Property Name="IdSupplier" Type="int" />
           <Property Name="NameStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Supplier">
@@ -178,7 +178,7 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Website" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdStatusSupplier" Type="int" Nullable="false" />
+          <Property Name="IdStatusSupplier" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -197,10 +197,10 @@
           <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="IdRole" Type="int" />
         </EntityType>
         <Association Name="FK_Comment_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -212,7 +212,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_MethodDelivery1">
-          <End Role="MethodDelivery" Type="Self.MethodDelivery" Multiplicity="1" />
+          <End Role="MethodDelivery" Type="Self.MethodDelivery" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MethodDelivery">
@@ -224,7 +224,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_Orders">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -236,7 +236,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_StatusDelivery">
-          <End Role="StatusDelivery" Type="Self.StatusDelivery" Multiplicity="1" />
+          <End Role="StatusDelivery" Type="Self.StatusDelivery" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusDelivery">
@@ -248,7 +248,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderHistory_Orders">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -260,7 +260,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderHistory_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -272,7 +272,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderHistory_StatusOrderHistory">
-          <End Role="StatusOrderHistory" Type="Self.StatusOrderHistory" Multiplicity="1" />
+          <End Role="StatusOrderHistory" Type="Self.StatusOrderHistory" Multiplicity="0..1" />
           <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusOrderHistory">
@@ -283,8 +283,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Orders_Purchase">
-          <End Role="Purchase" Type="Self.Purchase" Multiplicity="1" />
+        <Association Name="FK_Orders_Purchase1">
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Purchase">
@@ -296,7 +296,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_StatusOrder">
-          <End Role="StatusOrder" Type="Self.StatusOrder" Multiplicity="1" />
+          <End Role="StatusOrder" Type="Self.StatusOrder" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusOrder">
@@ -308,7 +308,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Supplier">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
@@ -320,7 +320,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Payment_MethodPayment">
-          <End Role="MethodPayment" Type="Self.MethodPayment" Multiplicity="1" />
+          <End Role="MethodPayment" Type="Self.MethodPayment" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MethodPayment">
@@ -332,7 +332,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Payment_Orders">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -344,7 +344,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Payment_StatusPayment">
-          <End Role="StatusPayment" Type="Self.StatusPayment" Multiplicity="1" />
+          <End Role="StatusPayment" Type="Self.StatusPayment" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusPayment">
@@ -356,7 +356,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -368,7 +368,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Purchase_StatusPurchase">
-          <End Role="StatusPurchase" Type="Self.StatusPurchase" Multiplicity="1" />
+          <End Role="StatusPurchase" Type="Self.StatusPurchase" Multiplicity="0..1" />
           <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusPurchase">
@@ -380,7 +380,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Purchase_Supplier">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
           <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
@@ -392,7 +392,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Review_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -403,8 +403,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StatusOrderHistory_OrderHistory">
+          <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="0..1" />
+          <End Role="StatusOrderHistory" Type="Self.StatusOrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderHistory">
+              <PropertyRef Name="IdOrderHistory" />
+            </Principal>
+            <Dependent Role="StatusOrderHistory">
+              <PropertyRef Name="IdOrderHistory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusPayment_Payment">
+          <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+          <End Role="StatusPayment" Type="Self.StatusPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="IdPayment" />
+            </Principal>
+            <Dependent Role="StatusPayment">
+              <PropertyRef Name="IdPayment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Supplier_StatusSupplier">
-          <End Role="StatusSupplier" Type="Self.StatusSupplier" Multiplicity="1" />
+          <End Role="StatusSupplier" Type="Self.StatusSupplier" Multiplicity="0..1" />
           <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusSupplier">
@@ -416,7 +440,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Role">
-          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
@@ -427,37 +451,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Хранилище DBModelContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
@@ -508,7 +501,7 @@
             <End Role="StatusOrderHistory" EntitySet="StatusOrderHistory" />
             <End Role="OrderHistory" EntitySet="OrderHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK_Orders_Purchase" Association="Self.FK_Orders_Purchase">
+          <AssociationSet Name="FK_Orders_Purchase1" Association="Self.FK_Orders_Purchase1">
             <End Role="Purchase" EntitySet="Purchase" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
@@ -548,6 +541,14 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
+          <AssociationSet Name="FK_StatusOrderHistory_OrderHistory" Association="Self.FK_StatusOrderHistory_OrderHistory">
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
+            <End Role="StatusOrderHistory" EntitySet="StatusOrderHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusPayment_Payment" Association="Self.FK_StatusPayment_Payment">
+            <End Role="Payment" EntitySet="Payment" />
+            <End Role="StatusPayment" EntitySet="StatusPayment" />
+          </AssociationSet>
           <AssociationSet Name="FK_Supplier_StatusSupplier" Association="Self.FK_Supplier_StatusSupplier">
             <End Role="StatusSupplier" EntitySet="StatusSupplier" />
             <End Role="Supplier" EntitySet="Supplier" />
@@ -575,7 +576,7 @@
             <PropertyRef Name="IdComment" />
           </Key>
           <Property Name="IdComment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdProduct" Type="Int32" Nullable="false" />
+          <Property Name="IdProduct" Type="Int32" />
           <Property Name="TextComment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DateComment" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Comment_Product" FromRole="Comment" ToRole="Product" />
@@ -585,10 +586,10 @@
             <PropertyRef Name="IdDelivery" />
           </Key>
           <Property Name="IdDelivery" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdOrder" Type="Int32" Nullable="false" />
-          <Property Name="IdMethodDelivery" Type="Int32" Nullable="false" />
-          <Property Name="DateDelivery" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="IdStatusDelivery" Type="Int32" Nullable="false" />
+          <Property Name="IdOrder" Type="Int32" />
+          <Property Name="IdMethodDelivery" Type="Int32" />
+          <Property Name="DateDelivery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdStatusDelivery" Type="Int32" />
           <NavigationProperty Name="MethodDelivery" Relationship="Self.FK_Delivery_MethodDelivery1" FromRole="Delivery" ToRole="MethodDelivery" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Delivery_Orders" FromRole="Delivery" ToRole="Orders" />
           <NavigationProperty Name="StatusDelivery" Relationship="Self.FK_Delivery_StatusDelivery" FromRole="Delivery" ToRole="StatusDelivery" />
@@ -598,7 +599,7 @@
             <PropertyRef Name="IdMethodDelivery" />
           </Key>
           <Property Name="IdMethodDelivery" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdDelivery" Type="Int32" Nullable="false" />
+          <Property Name="IdDelivery" Type="Int32" />
           <Property Name="NameMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_Delivery_MethodDelivery1" FromRole="MethodDelivery" ToRole="Delivery" />
         </EntityType>
@@ -607,7 +608,7 @@
             <PropertyRef Name="IdMethodPayment" />
           </Key>
           <Property Name="IdMethodPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPayment" Type="Int32" Nullable="false" />
+          <Property Name="IdPayment" Type="Int32" />
           <Property Name="NameMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Payment" Relationship="Self.FK_Payment_MethodPayment" FromRole="MethodPayment" ToRole="Payment" />
         </EntityType>
@@ -616,29 +617,30 @@
             <PropertyRef Name="IdOrderHistory" />
           </Key>
           <Property Name="IdOrderHistory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdOrder" Type="Int32" Nullable="false" />
-          <Property Name="IdProduct" Type="Int32" Nullable="false" />
+          <Property Name="IdOrder" Type="Int32" />
+          <Property Name="IdProduct" Type="Int32" />
           <Property Name="QuantityProduct" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AmountOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdOrderStatusHistory" Type="Int32" Nullable="false" />
+          <Property Name="IdOrderStatusHistory" Type="Int32" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_OrderHistory_Orders" FromRole="OrderHistory" ToRole="Orders" />
           <NavigationProperty Name="Product" Relationship="Self.FK_OrderHistory_Product" FromRole="OrderHistory" ToRole="Product" />
           <NavigationProperty Name="StatusOrderHistory" Relationship="Self.FK_OrderHistory_StatusOrderHistory" FromRole="OrderHistory" ToRole="StatusOrderHistory" />
+          <NavigationProperty Name="StatusOrderHistory1" Relationship="Self.FK_StatusOrderHistory_OrderHistory" FromRole="OrderHistory" ToRole="StatusOrderHistory" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="IdOrder" />
           </Key>
           <Property Name="IdOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPurchase" Type="Int32" Nullable="false" />
-          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+          <Property Name="IdPurchase" Type="Int32" />
+          <Property Name="IdSupplier" Type="Int32" />
           <Property Name="QuantityProduct" Type="Int32" Nullable="false" />
-          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="IdStatusOrder" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdStatusOrder" Type="Int32" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_Delivery_Orders" FromRole="Orders" ToRole="Delivery" />
           <NavigationProperty Name="OrderHistory" Relationship="Self.FK_OrderHistory_Orders" FromRole="Orders" ToRole="OrderHistory" />
-          <NavigationProperty Name="Purchase" Relationship="Self.FK_Orders_Purchase" FromRole="Orders" ToRole="Purchase" />
+          <NavigationProperty Name="Purchase" Relationship="Self.FK_Orders_Purchase1" FromRole="Orders" ToRole="Purchase" />
           <NavigationProperty Name="StatusOrder" Relationship="Self.FK_Orders_StatusOrder" FromRole="Orders" ToRole="StatusOrder" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_Orders_Supplier" FromRole="Orders" ToRole="Supplier" />
           <NavigationProperty Name="Payment" Relationship="Self.FK_Payment_Orders" FromRole="Orders" ToRole="Payment" />
@@ -648,14 +650,15 @@
             <PropertyRef Name="IdPayment" />
           </Key>
           <Property Name="IdPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdOrder" Type="Int32" Nullable="false" />
-          <Property Name="IdMethodPayment" Type="Int32" Nullable="false" />
+          <Property Name="IdOrder" Type="Int32" />
+          <Property Name="IdMethodPayment" Type="Int32" />
           <Property Name="AmountPayment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DatePayment" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="IdStatusPayment" Type="Int32" Nullable="false" />
+          <Property Name="DatePayment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdStatusPayment" Type="Int32" />
           <NavigationProperty Name="MethodPayment" Relationship="Self.FK_Payment_MethodPayment" FromRole="Payment" ToRole="MethodPayment" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Payment_Orders" FromRole="Payment" ToRole="Orders" />
           <NavigationProperty Name="StatusPayment" Relationship="Self.FK_Payment_StatusPayment" FromRole="Payment" ToRole="StatusPayment" />
+          <NavigationProperty Name="StatusPayment1" Relationship="Self.FK_StatusPayment_Payment" FromRole="Payment" ToRole="StatusPayment" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -663,9 +666,9 @@
           </Key>
           <Property Name="IdProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CategoryProduct" Type="Int32" Nullable="false" />
+          <Property Name="CategoryProduct" Type="Int32" />
           <Property Name="DescriptionProduct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Comment" Relationship="Self.FK_Comment_Product" FromRole="Product" ToRole="Comment" />
@@ -677,12 +680,12 @@
             <PropertyRef Name="IdPurchase" />
           </Key>
           <Property Name="IdPurchase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DatePurchase" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DescriptionProduct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdStatusPurchase" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Purchase" FromRole="Purchase" ToRole="Orders" />
+          <Property Name="DatePurchase" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DescriptionProduct" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdSupplier" Type="Int32" />
+          <Property Name="Price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdStatusPurchase" Type="Int32" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Purchase1" FromRole="Purchase" ToRole="Orders" />
           <NavigationProperty Name="StatusPurchase" Relationship="Self.FK_Purchase_StatusPurchase" FromRole="Purchase" ToRole="StatusPurchase" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_Purchase_Supplier" FromRole="Purchase" ToRole="Supplier" />
         </EntityType>
@@ -691,10 +694,10 @@
             <PropertyRef Name="IdReview" />
           </Key>
           <Property Name="IdReview" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdProduct" Type="Int32" Nullable="false" />
+          <Property Name="IdProduct" Type="Int32" />
           <Property Name="ProductEvalution" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TextReview" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DateRecall" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateRecall" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Review_Product" FromRole="Review" ToRole="Product" />
         </EntityType>
         <EntityType Name="Role">
@@ -710,7 +713,7 @@
             <PropertyRef Name="IdStatusDelivery" />
           </Key>
           <Property Name="IdStatusDelivery" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdDelivery" Type="Int32" Nullable="false" />
+          <Property Name="IdDelivery" Type="Int32" />
           <Property Name="NameStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_Delivery_StatusDelivery" FromRole="StatusDelivery" ToRole="Delivery" />
         </EntityType>
@@ -719,7 +722,7 @@
             <PropertyRef Name="IdStatusOrder" />
           </Key>
           <Property Name="IdStatusOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdOrder" Type="Int32" Nullable="false" />
+          <Property Name="IdOrder" Type="Int32" />
           <Property Name="NameStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_StatusOrder" FromRole="StatusOrder" ToRole="Orders" />
         </EntityType>
@@ -728,25 +731,27 @@
             <PropertyRef Name="IdStatusOrderHistory" />
           </Key>
           <Property Name="IdStatusOrderHistory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdOrderHistory" Type="Int32" Nullable="false" />
+          <Property Name="IdOrderHistory" Type="Int32" />
           <Property Name="NameStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="OrderHistory" Relationship="Self.FK_OrderHistory_StatusOrderHistory" FromRole="StatusOrderHistory" ToRole="OrderHistory" />
+          <NavigationProperty Name="OrderHistory1" Relationship="Self.FK_StatusOrderHistory_OrderHistory" FromRole="StatusOrderHistory" ToRole="OrderHistory" />
         </EntityType>
         <EntityType Name="StatusPayment">
           <Key>
             <PropertyRef Name="IdStatusPayment" />
           </Key>
           <Property Name="IdStatusPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPayment" Type="Int32" Nullable="false" />
+          <Property Name="IdPayment" Type="Int32" />
           <Property Name="NameStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Payment" Relationship="Self.FK_Payment_StatusPayment" FromRole="StatusPayment" ToRole="Payment" />
+          <NavigationProperty Name="Payment1" Relationship="Self.FK_StatusPayment_Payment" FromRole="StatusPayment" ToRole="Payment" />
         </EntityType>
         <EntityType Name="StatusPurchase">
           <Key>
             <PropertyRef Name="IdStatusPurchase" />
           </Key>
           <Property Name="IdStatusPurchase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPurchase" Type="Int32" Nullable="false" />
+          <Property Name="IdPurchase" Type="Int32" />
           <Property Name="NameStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Purchase" Relationship="Self.FK_Purchase_StatusPurchase" FromRole="StatusPurchase" ToRole="Purchase" />
         </EntityType>
@@ -755,7 +760,7 @@
             <PropertyRef Name="IdStatusSupplier" />
           </Key>
           <Property Name="IdStatusSupplier" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdSupplier" Type="Int32" Nullable="false" />
+          <Property Name="IdSupplier" Type="Int32" />
           <Property Name="NameStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_Supplier_StatusSupplier" FromRole="StatusSupplier" ToRole="Supplier" />
         </EntityType>
@@ -769,7 +774,7 @@
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdStatusSupplier" Type="Int32" Nullable="false" />
+          <Property Name="IdStatusSupplier" Type="Int32" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Supplier" FromRole="Supplier" ToRole="Orders" />
           <NavigationProperty Name="Purchase" Relationship="Self.FK_Purchase_Supplier" FromRole="Supplier" ToRole="Purchase" />
           <NavigationProperty Name="StatusSupplier" Relationship="Self.FK_Supplier_StatusSupplier" FromRole="Supplier" ToRole="StatusSupplier" />
@@ -791,11 +796,11 @@
           <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="IdRole" Type="Int32" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_Product_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
@@ -807,7 +812,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -819,7 +824,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_MethodDelivery1">
-          <End Role="MethodDelivery" Type="Self.MethodDelivery" Multiplicity="1" />
+          <End Role="MethodDelivery" Type="Self.MethodDelivery" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MethodDelivery">
@@ -831,7 +836,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_Orders">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -843,7 +848,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Delivery_StatusDelivery">
-          <End Role="StatusDelivery" Type="Self.StatusDelivery" Multiplicity="1" />
+          <End Role="StatusDelivery" Type="Self.StatusDelivery" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusDelivery">
@@ -855,7 +860,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Payment_MethodPayment">
-          <End Role="MethodPayment" Type="Self.MethodPayment" Multiplicity="1" />
+          <End Role="MethodPayment" Type="Self.MethodPayment" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MethodPayment">
@@ -867,7 +872,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderHistory_Orders">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -879,7 +884,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderHistory_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -891,7 +896,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderHistory_StatusOrderHistory">
-          <End Role="StatusOrderHistory" Type="Self.StatusOrderHistory" Multiplicity="1" />
+          <End Role="StatusOrderHistory" Type="Self.StatusOrderHistory" Multiplicity="0..1" />
           <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusOrderHistory">
@@ -902,8 +907,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Orders_Purchase">
-          <End Role="Purchase" Type="Self.Purchase" Multiplicity="1" />
+        <Association Name="FK_StatusOrderHistory_OrderHistory">
+          <End Role="OrderHistory" Type="Self.OrderHistory" Multiplicity="0..1" />
+          <End Role="StatusOrderHistory" Type="Self.StatusOrderHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderHistory">
+              <PropertyRef Name="IdOrderHistory" />
+            </Principal>
+            <Dependent Role="StatusOrderHistory">
+              <PropertyRef Name="IdOrderHistory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Purchase1">
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Purchase">
@@ -915,7 +932,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_StatusOrder">
-          <End Role="StatusOrder" Type="Self.StatusOrder" Multiplicity="1" />
+          <End Role="StatusOrder" Type="Self.StatusOrder" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusOrder">
@@ -927,7 +944,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Orders_Supplier">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
@@ -939,7 +956,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Payment_Orders">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -951,7 +968,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Payment_StatusPayment">
-          <End Role="StatusPayment" Type="Self.StatusPayment" Multiplicity="1" />
+          <End Role="StatusPayment" Type="Self.StatusPayment" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusPayment">
@@ -962,8 +979,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StatusPayment_Payment">
+          <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+          <End Role="StatusPayment" Type="Self.StatusPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="IdPayment" />
+            </Principal>
+            <Dependent Role="StatusPayment">
+              <PropertyRef Name="IdPayment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Review_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Review" Type="Self.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -975,7 +1004,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Purchase_StatusPurchase">
-          <End Role="StatusPurchase" Type="Self.StatusPurchase" Multiplicity="1" />
+          <End Role="StatusPurchase" Type="Self.StatusPurchase" Multiplicity="0..1" />
           <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusPurchase">
@@ -987,7 +1016,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Purchase_Supplier">
-          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
           <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
@@ -999,7 +1028,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Role">
-          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
@@ -1011,7 +1040,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Supplier_StatusSupplier">
-          <End Role="StatusSupplier" Type="Self.StatusSupplier" Multiplicity="1" />
+          <End Role="StatusSupplier" Type="Self.StatusSupplier" Multiplicity="0..1" />
           <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StatusSupplier">
@@ -1080,7 +1109,11 @@
             <End Role="StatusOrderHistory" EntitySet="StatusOrderHistory" />
             <End Role="OrderHistory" EntitySet="OrderHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK_Orders_Purchase" Association="Self.FK_Orders_Purchase">
+          <AssociationSet Name="FK_StatusOrderHistory_OrderHistory" Association="Self.FK_StatusOrderHistory_OrderHistory">
+            <End Role="OrderHistory" EntitySet="OrderHistory" />
+            <End Role="StatusOrderHistory" EntitySet="StatusOrderHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Purchase1" Association="Self.FK_Orders_Purchase1">
             <End Role="Purchase" EntitySet="Purchase" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
@@ -1099,6 +1132,10 @@
           <AssociationSet Name="FK_Payment_StatusPayment" Association="Self.FK_Payment_StatusPayment">
             <End Role="StatusPayment" EntitySet="StatusPayment" />
             <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusPayment_Payment" Association="Self.FK_StatusPayment_Payment">
+            <End Role="Payment" EntitySet="Payment" />
+            <End Role="StatusPayment" EntitySet="StatusPayment" />
           </AssociationSet>
           <AssociationSet Name="FK_Review_Product" Association="Self.FK_Review_Product">
             <End Role="Product" EntitySet="Product" />
@@ -1120,48 +1157,7 @@
             <End Role="StatusSupplier" EntitySet="StatusSupplier" />
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1383,30 +1379,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище DBModel.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище DBModel.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище DBModel.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище DBModel.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище DBModel.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище DBModel.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище DBModel.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -13,29 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
 using diplom_reliz.PagesFolder;
-
+using diplom_reliz.WindowFolder;
 
 namespace diplom_reliz.WindowFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AdminWindow.xaml
+    /// Логика взаимодействия для AdminWindow2.xaml
     /// </summary>
-    public partial class AdminWindow : Window
+    public partial class AdminWindow2 : Window
     {
         private Button _lastClickedButton;
-        string login2;
-        string roleName2;
 
+        public AdminWindow2(string login2, string roleName2)
+        {
+            InitializeComponent();
+            LoginLabel.Text = login2;
+            RoleLabel.Text = roleName2;
 
-            public AdminWindow(string login, string roleName)
-            {
-                InitializeComponent();
-                LoginLabel.Text = login;
-                RoleLabel.Text = roleName;
-                login2 = login;
-                roleName2 = roleName;
-            }
-        
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -63,12 +58,6 @@ namespace diplom_reliz.WindowFolder
 
         private void Purchases_Click(object sender, RoutedEventArgs e)
         {
-            new AdminWindow2(login2, roleName2).Show();
-
-        }
-
-        private void Products_Click(object sender, RoutedEventArgs e)
-        {
             var clickedButton = sender as Button;
 
             if (_lastClickedButton != null)
@@ -80,7 +69,7 @@ namespace diplom_reliz.WindowFolder
 
             _lastClickedButton = clickedButton;
 
-            MainFrame.Navigate(new ProductsPage());
+            MainFrame.Navigate(new PurchasesPage());
         }
 
         private void Delivery_Click(object sender, RoutedEventArgs e)
@@ -129,39 +118,6 @@ namespace diplom_reliz.WindowFolder
             _lastClickedButton = clickedButton;
 
             MainFrame.Navigate(new PaymentsPage());
-        }
-
-        private void Provider_Click(object sender, RoutedEventArgs e)
-        {
-            var clickedButton = sender as Button;
-
-            if (_lastClickedButton != null)
-            {
-                _lastClickedButton.Style = (Style)FindResource("NormalButtonStyle");
-            }
-
-            clickedButton.Style = (Style)FindResource("ActiveButtonStyle");
-
-            _lastClickedButton = clickedButton;
-
-            MainFrame.Navigate(new ProviderPage());
-        }
-
-        private void Users_Click(object sender, RoutedEventArgs e)
-        {
-            var clickedButton = sender as Button;
-
-            if (_lastClickedButton != null)
-            {
-                _lastClickedButton.Style = (Style)FindResource("NormalButtonStyle");
-            }
-
-            clickedButton.Style = (Style)FindResource("ActiveButtonStyle");
-
-            _lastClickedButton = clickedButton;
-
-            MainFrame.Navigate(new UsersPage());
-
         }
     }
 }

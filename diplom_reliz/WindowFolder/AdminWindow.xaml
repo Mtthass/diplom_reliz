@@ -28,7 +28,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/diplom_reliz;component/ResoureceFolder/Window2.png"/>
+            <ImageBrush ImageSource="/diplom_reliz;component/ResoureceFolder/Window3.png"/>
         </Grid.Background>
 
 
@@ -37,47 +37,34 @@
        NavigationUIVisibility="Hidden" Margin="266,90,10,10"/>
 
         <StackPanel Width="248" HorizontalAlignment="Left" Margin="0,0,0,10">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5,5,0,5">
-                <materialDesign:PackIcon Kind="User"  Width="70" Height="65" Foreground="White"  Margin="10 10"  />
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,5,0,5">
+                <md:PackIcon Kind="User"  Width="70" Height="65" Foreground="#FF7A1DFF"  Margin="10 10"  />
                 <StackPanel>
-                    <TextBlock x:Name="LoginLabel" Foreground="White" Width="130" VerticalAlignment="Center" FontSize="30"/>
-                    <TextBlock x:Name="RoleLabel"  Foreground="White" Width="130" VerticalAlignment="Center" FontSize="18"/>
+                    <TextBlock x:Name="LoginLabel" Foreground="#FF7A1DFF" Width="130" VerticalAlignment="Center" FontSize="30"/>
+                    <TextBlock x:Name="RoleLabel"  Foreground="#FF7A1DFF" Width="130" VerticalAlignment="Center" FontSize="18"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10">
-                <materialDesign:PackIcon Kind="Cart" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
-                <Button Margin="10 5" Content="Закупки" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
-                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Purchases" Click="Purchases_Click" />
+                <materialDesign:PackIcon Kind="W3c" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
+                <Button Margin="0 5" Content="Товарооборот" Width="162" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="19"
+                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Purchases" Click="Purchases_Click" Background="{x:Null}" >
+                    
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
                 <materialDesign:PackIcon Kind="Purse" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
-                <Button Margin="10 5" Content="Товары" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
-                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Products" Click="Products_Click" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
-                <materialDesign:PackIcon Kind="Car" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
-                <Button Margin="10 5" Content="Доставка" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
-                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Delivery" Click="Delivery_Click" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
-                <materialDesign:PackIcon Kind="ListBox" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
-                <Button Margin="10 5" Content="Заказы" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
-                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Orders" Click="Orders_Click" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
-                <materialDesign:PackIcon Kind="Money" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
-                <Button Margin="10 5" Content="Платежи" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
-                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Payments" Click="Payments_Click" />
+                <Button Margin="0 5" Content="Товары" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="19"
+                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Products" Click="Products_Click" Background="{x:Null}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
                 <materialDesign:PackIcon Kind="DeliveryDining" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
-                <Button Margin="10 5" Content="Поставщик" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="25"
-                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Provider" Click="Provider_Click" />
+                <Button Margin="0 5" Content="Поставщик" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="19"
+                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Provider" Click="Provider_Click" Background="{x:Null}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10 5">
                 <materialDesign:PackIcon Kind="Users" Width="60" Height="50" Foreground="White" VerticalAlignment="Center"/>
-                <Button Margin="10 5" Content="Пользователи" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="21"
-                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Users" Click="Users_Click" />
+                <Button Margin="0 5" Content="Пользователи" Width="180" VerticalAlignment="Center" HorizontalContentAlignment="Left" FontSize="19"
+                         Style="{StaticResource NormalButtonStyle}" Height="56" x:Name="Users" Click="Users_Click" Background="{x:Null}" />
             </StackPanel>
 
 
@@ -103,8 +90,8 @@
                             Width="24"
                             Content="{materialDesign:PackIcon Kind=Close}" Background="White" Click="Button_Click_2"/>
         </StackPanel>
-        
-        
+
+
 
     </Grid>
 </Window>

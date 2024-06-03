@@ -21,7 +21,7 @@ namespace diplom_reliz.DataFolder
         }
     
         public int IdStatusSupplier { get; set; }
-        public int IdSupplier { get; set; }
+        public Nullable<int> IdSupplier { get; set; }
         public string NameStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

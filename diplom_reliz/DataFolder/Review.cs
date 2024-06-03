@@ -15,10 +15,10 @@ namespace diplom_reliz.DataFolder
     public partial class Review
     {
         public int IdReview { get; set; }
-        public int IdProduct { get; set; }
+        public Nullable<int> IdProduct { get; set; }
         public string ProductEvalution { get; set; }
         public string TextReview { get; set; }
-        public System.DateTime DateRecall { get; set; }
+        public string DateRecall { get; set; }
     
         public virtual Product Product { get; set; }
     }

@@ -17,7 +17,7 @@ namespace diplom_reliz.DataFolder
         public int IdUser { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public int IdRole { get; set; }
+        public Nullable<int> IdRole { get; set; }
     
         public virtual Role Role { get; set; }
     }

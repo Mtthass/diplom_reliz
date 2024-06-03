@@ -21,7 +21,7 @@ namespace diplom_reliz.DataFolder
         }
     
         public int IdMethodPayment { get; set; }
-        public int IdPayment { get; set; }
+        public Nullable<int> IdPayment { get; set; }
         public string NameMethod { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

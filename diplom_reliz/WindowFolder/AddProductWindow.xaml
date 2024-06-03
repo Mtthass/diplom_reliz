@@ -7,94 +7,69 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
-         WindowStyle="None"
-        Title="AddUserWindow" Height="550" Width="552" MaxHeight="550" MinHeight="550" MaxWidth="552" MinWidth="552">
-    <Grid Margin="0,0,-8,-8" Background="#FF88B6D6">
+        mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="680" MaxHeight="530" MinHeight="530" MaxWidth="680" MinWidth="680"
+      Title="TestPage2"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="20"
+      FontFamily="Cascadia Code">
 
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="185*"/>
-            <RowDefinition Height="96*"/>
-            <RowDefinition Height="96*"/>
-            <RowDefinition Height="86*"/>
-            <RowDefinition Height="56*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock
-                       x:Name="DialogTitleTb"
-                       TextWrapping="Wrap"
-                       TextAlignment="Center"
-                       FontWeight="SemiBold"
-                       FontSize="24" Margin="132,10,118,136" ><Run Text="Добавление "/><Run Text="товар"/><Run Text="а"/></TextBlock>
-
-        <materialDesign:PackIcon Kind="Cart" Width="342" Height="131" Foreground="Black" VerticalAlignment="Center" Margin="109,52,0,10"/>
-
-        <Button
-        Tag="Plus" Content="Добавить"
-        x:Name="FormBtn" Height="Auto"
-        Margin="220,16,204,10" Grid.Row="4"/>
 
 
-        <TextBox x:Name="Tb1" HorizontalAlignment="Left" Height="28" Margin="15,62,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" materialDesign:HintAssist.Hint="Имеющееся кол-во" 
-                             Foreground="Black" VerticalContentAlignment="Center"
-                             ToolTip="юр адресс" Background="{x:Null}" />
 
-        <TextBox x:Name="Tb2" HorizontalAlignment="Left" Height="28" Margin="15,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" materialDesign:HintAssist.Hint="Название товара" 
-                             Foreground="Black" VerticalContentAlignment="Center"
-                             ToolTip="название товара" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
 
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top"
-                            Orientation="Horizontal" Height="24" Width="33">
-            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
-                            Height="24"
-                            Margin="8 0 0 0"
-                            Width="22"
-                            Content="{md:PackIcon Kind=Close}" Background="White" Click="Button_Click"/>
+            <Label Content="Добавить товар" Grid.Row="1" Grid.Column="1" FontSize="30" Height="60" HorizontalAlignment="Center"/>
+
+            <Border Height="2" Background="Black"/>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <Label Content="Название" FontSize="20"/>
+                    <TextBox x:Name="Tb1" Width="240" Height="40" BorderBrush="#FF939393"/>
+
+                    <Label Content="Категория" FontSize="20"/>
+                    <ComboBox x:Name="Tb2" Width="240" Height="40" BorderBrush="#FF939393"/>
+                    <Label Content="Описание" FontSize="20"/>
+                    <TextBox x:Name="Tb3" Width="240" Height="40" BorderBrush="#FF939393"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <Label Content="Кол-во п" FontSize="20"/>
+                    <TextBox x:Name="Cb1" Width="240" Height="40" BorderBrush="#FF939393"/>
+                    <Label Content="Цена за шт." FontSize="20"/>
+                    <TextBox x:Name="Cb2" Width="240" Height="40" BorderBrush="#FF939393"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="10"/>
+            </StackPanel>
+
+            <Border Height="2" Background="Black"/>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="10"/>
+
+                <StackPanel Orientation="Vertical" />
+            </StackPanel>
+
+            <Button Width="260" Height="60" ToolTip="Нажмите чтобы добавить" x:Name="btnAdd" BorderBrush="{x:Null}" Background="#FFD47AE8" 
+        Content="Добавить" Foreground="White" VerticalAlignment="Bottom" FontSize="20" Margin="30"/>
+
         </StackPanel>
-        <TextBox x:Name="Tb2_Copy" HorizontalAlignment="Left" Height="28" Margin="192,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" md:HintAssist.Hint="Тип товара" 
-            Foreground="Black" VerticalContentAlignment="Center"
-            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
-        <TextBox x:Name="Tb2_Copy1" HorizontalAlignment="Left" Height="28" Margin="192,62,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" md:HintAssist.Hint="Стоимость" 
-            Foreground="Black" VerticalContentAlignment="Center"
-            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
-        <TextBox x:Name="Tb2_Copy2" HorizontalAlignment="Left" Height="28" Margin="398,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" md:HintAssist.Hint="Краткое описание" 
-            Foreground="Black" VerticalContentAlignment="Center"
-            ToolTip="Введите пароль" Background="{x:Null}" RenderTransformOrigin="0.556,0.821" />
-        <TextBlock
-            TextWrapping="Wrap"
-            TextAlignment="Left"
-            FontWeight="SemiBold"
-            FontSize="18" Margin="15,10,395,52" Grid.Row="1" ><Run Text="Название "/></TextBlock>
-        <TextBlock
-            TextWrapping="Wrap"
-            TextAlignment="Left"
-            FontWeight="SemiBold"
-            FontSize="18" Margin="192,10,218,52" Grid.Row="1" ><Run Text="Категория "/></TextBlock>
-        <TextBlock
-            TextWrapping="Wrap"
-            TextAlignment="Left"
-            FontWeight="SemiBold"
-            FontSize="18" Margin="398,10,12,52" Grid.Row="1" ><Run Text="Описание "/></TextBlock>
-        <TextBlock
-            TextWrapping="Wrap"
-            TextAlignment="Left"
-            FontWeight="SemiBold"
-            FontSize="18" Margin="15,10,395,52" Grid.Row="2" ><Run Text="Количество "/></TextBlock>
-        <TextBlock
-            TextWrapping="Wrap"
-            TextAlignment="Left"
-            FontWeight="SemiBold"
-            FontSize="18" Margin="192,10,188,43" Grid.Row="2" ><Run Text="Стоимость за ед. "/></TextBlock>
-
-
-
-
-
-
-
 
     </Grid>
 </Window>
+

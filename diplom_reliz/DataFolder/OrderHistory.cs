@@ -14,16 +14,24 @@ namespace diplom_reliz.DataFolder
     
     public partial class OrderHistory
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public OrderHistory()
+        {
+            this.StatusOrderHistory1 = new HashSet<StatusOrderHistory>();
+        }
+    
         public int IdOrderHistory { get; set; }
-        public int IdOrder { get; set; }
-        public int IdProduct { get; set; }
+        public Nullable<int> IdOrder { get; set; }
+        public Nullable<int> IdProduct { get; set; }
         public int QuantityProduct { get; set; }
         public string Price { get; set; }
         public string AmountOrder { get; set; }
-        public int IdOrderStatusHistory { get; set; }
+        public Nullable<int> IdOrderStatusHistory { get; set; }
     
         public virtual Orders Orders { get; set; }
         public virtual Product Product { get; set; }
         public virtual StatusOrderHistory StatusOrderHistory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StatusOrderHistory> StatusOrderHistory1 { get; set; }
     }
 }

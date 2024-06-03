@@ -4,38 +4,33 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:diplom_reliz.PagesFolder"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UsersPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600*"/>
-            <ColumnDefinition Width="104*"/>
-            <ColumnDefinition Width="90*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="203*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Button
          Content="Добавить"
-         Margin="8,10,3.5,6" Height="24" Width="78" Click="AddBtn_Click" FontSize="6" Grid.Row="1" Grid.Column="2"/>
-        <Button
-         Content="Редактировать"
-         Margin="16,10,10,6" Height="24" Width="78" FontSize="6" Grid.Row="1" Grid.Column="1"/>
+         Margin="660,-52,100,580" Height="24" Width="78" Click="AddBtn_Click" FontSize="10" Background="#FDB900FF" BorderBrush="{x:Null}" Foreground="#DDFFFFFF"/>
 
         <DataGrid x:Name="ListUserDG"
-        Foreground="White"
+        Foreground="White"   
+        RowStyle="{StaticResource CustomDataGridRowStyle}"
         AutoGenerateColumns="False"
         IsReadOnly="True"
-        ItemsSource="{Binding User}" Margin="10,10,3.5,1" FontSize="15" Grid.ColumnSpan="3">
+        ItemsSource="{Binding User}" Margin="10,71,10,10" FontSize="15" Style="{StaticResource MaterialDesignDataGrid}">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF041AFF" Offset="0"/>
+                    <GradientStop Color="#FFD101FF" Offset="0"/>
                     <GradientStop Color="#FD00E8FF" Offset="1"/>
                 </LinearGradientBrush>
             </DataGrid.Background>
@@ -59,6 +54,11 @@
             </DataGrid.Columns>
         </DataGrid>
 
+        <TextBox x:Name="SearchTb"  VerticalContentAlignment="Center" FontSize="20" HorizontalAlignment="Left" BorderThickness="0" Style="{StaticResource RoundedTextBox}" md:HintAssist.Hint="Поиск"  Height="35" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" TextChanged="TextBox_TextChanged" Background="#FD00E8FF" BorderBrush="Black" Foreground="Black" Margin="535,25,-35,0"/>
+        <materialDesign:PackIcon Kind="Search" Width="35" Height="35" Foreground="White" VerticalAlignment="Center" Margin="800,-160,-800,400"/>
+        <Button
+            Content="Удалить" x:Name="DeletedClick"
+            Margin="730,-52,-15,580" Height="24" Width="78" FontSize="10" Click="DeletedClick_Click" Background="#FDB900FF" BorderBrush="{x:Null}" Foreground="#DDFFFFFF"/>
 
     </Grid>
 

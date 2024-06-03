@@ -11,33 +11,25 @@
       Title="PurchasesPage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600*"/>
-            <ColumnDefinition Width="104*"/>
-            <ColumnDefinition Width="90*"/>
-            <ColumnDefinition Width="7*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="203*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
+
 
         <Button
-         Content="Добавить"
-         Margin="8,10,3.5,6" Height="24" Width="78" Click="Button_Click" FontSize="6" Grid.Row="1" Grid.Column="2"/>
+         Content="Добавить" x:Name="Add_Purchases"
+         Margin="660,-52,100,580" Height="24" Width="78" FontSize="10" Background="#FDB900FF" BorderBrush="{x:Null}" Foreground="#DDFFFFFF" Click="Add_Purchases_Click"/>
         <Button
-         Content="Редактировать"
-         Margin="16,10,10,6" Height="24" Width="78" FontSize="6" Grid.Row="1" Grid.Column="1"/>
+            Content="Удалить" x:Name="Deleted_Purchases"
+            Margin="730,-52,-15,580" Height="24" Width="78" FontSize="10" Background="#FDB900FF" BorderBrush="{x:Null}" Foreground="#DDFFFFFF" Click="Deleted_Purchases_Click"/>
 
         <DataGrid x:Name="ListPurchaseDG"
-                  Foreground="White"
+        Foreground="White"
+        RowStyle="{StaticResource CustomDataGridRowStyle}"
         AutoGenerateColumns="False"
         IsReadOnly="True"
-        ItemsSource="{Binding Purchase}" Margin="10,10,3.5,1" FontSize="15" Grid.ColumnSpan="3">
+        SelectionMode="Single"
+        ItemsSource="{Binding Purchase}" Margin="10,71,10,10" FontSize="15" Grid.ColumnSpan="3">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF041AFF" Offset="0"/>
+                    <GradientStop Color="#FFD101FF" Offset="0"/>
                     <GradientStop Color="#FD00E8FF" Offset="1"/>
                 </LinearGradientBrush>
             </DataGrid.Background>
@@ -66,6 +58,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox x:Name="SearchTb" VerticalContentAlignment="Center" FontSize="20"  HorizontalAlignment="Left" BorderThickness="0" Style="{StaticResource RoundedTextBox}" md:HintAssist.Hint="Поиск"  Height="35" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" TextChanged="SearchTb_TextChanged" Background="#FD00E8FF" BorderBrush="Black" Foreground="Black" Margin="535,25,-35,0"/>
+        <materialDesign:PackIcon Kind="Search" Width="35" Height="35" Foreground="White" VerticalAlignment="Center" Margin="800,-160,-800,400"/>
 
 
     </Grid>

@@ -21,10 +21,11 @@ namespace diplom_reliz.DataFolder
         }
     
         public int IdStatusPayment { get; set; }
-        public int IdPayment { get; set; }
+        public Nullable<int> IdPayment { get; set; }
         public string NameStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Payment> Payment { get; set; }
+        public virtual Payment Payment1 { get; set; }
     }
 }

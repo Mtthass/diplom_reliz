@@ -15,10 +15,10 @@ namespace diplom_reliz.DataFolder
     public partial class Delivery
     {
         public int IdDelivery { get; set; }
-        public int IdOrder { get; set; }
-        public int IdMethodDelivery { get; set; }
-        public System.DateTime DateDelivery { get; set; }
-        public int IdStatusDelivery { get; set; }
+        public Nullable<int> IdOrder { get; set; }
+        public Nullable<int> IdMethodDelivery { get; set; }
+        public string DateDelivery { get; set; }
+        public Nullable<int> IdStatusDelivery { get; set; }
     
         public virtual MethodDelivery MethodDelivery { get; set; }
         public virtual Orders Orders { get; set; }

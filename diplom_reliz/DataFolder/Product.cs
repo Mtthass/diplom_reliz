@@ -24,9 +24,9 @@ namespace diplom_reliz.DataFolder
     
         public int IdProduct { get; set; }
         public string NameProduct { get; set; }
-        public int CategoryProduct { get; set; }
+        public Nullable<int> CategoryProduct { get; set; }
         public string DescriptionProduct { get; set; }
-        public int Quantity { get; set; }
+        public string Quantity { get; set; }
         public string Price { get; set; }
     
         public virtual Category Category { get; set; }

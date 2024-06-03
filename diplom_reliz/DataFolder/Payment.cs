@@ -14,15 +14,23 @@ namespace diplom_reliz.DataFolder
     
     public partial class Payment
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Payment()
+        {
+            this.StatusPayment1 = new HashSet<StatusPayment>();
+        }
+    
         public int IdPayment { get; set; }
-        public int IdOrder { get; set; }
-        public int IdMethodPayment { get; set; }
+        public Nullable<int> IdOrder { get; set; }
+        public Nullable<int> IdMethodPayment { get; set; }
         public string AmountPayment { get; set; }
-        public System.DateTime DatePayment { get; set; }
-        public int IdStatusPayment { get; set; }
+        public string DatePayment { get; set; }
+        public Nullable<int> IdStatusPayment { get; set; }
     
         public virtual MethodPayment MethodPayment { get; set; }
         public virtual Orders Orders { get; set; }
         public virtual StatusPayment StatusPayment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StatusPayment> StatusPayment1 { get; set; }
     }
 }

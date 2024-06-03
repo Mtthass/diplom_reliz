@@ -132,12 +132,6 @@
     <Compile Include="DataFolder\Role.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataFolder\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataFolder\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataFolder\StatusDelivery.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -210,6 +204,9 @@
     <Compile Include="WindowFolder\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowFolder\AdminWindow2.xaml.cs">
+      <DependentUpon>AdminWindow2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowFolder\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -266,6 +263,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Resource Include="ResoureceFolder\Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
     <Page Include="WindowFolder\AddDeliveryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -295,6 +296,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowFolder\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowFolder\AdminWindow2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -350,9 +355,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ResoureceFolder\login.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="ResoureceFolder\Window.png" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +362,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResoureceFolder\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResoureceFolder\Window3.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataFolder\DBModel.Context.tt">

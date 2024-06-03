@@ -21,10 +21,11 @@ namespace diplom_reliz.DataFolder
         }
     
         public int IdStatusOrderHistory { get; set; }
-        public int IdOrderHistory { get; set; }
+        public Nullable<int> IdOrderHistory { get; set; }
         public string NameStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderHistory> OrderHistory { get; set; }
+        public virtual OrderHistory OrderHistory1 { get; set; }
     }
 }

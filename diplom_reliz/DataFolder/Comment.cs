@@ -15,7 +15,7 @@ namespace diplom_reliz.DataFolder
     public partial class Comment
     {
         public int IdComment { get; set; }
-        public int IdProduct { get; set; }
+        public Nullable<int> IdProduct { get; set; }
         public string TextComment { get; set; }
         public System.DateTime DateComment { get; set; }
     

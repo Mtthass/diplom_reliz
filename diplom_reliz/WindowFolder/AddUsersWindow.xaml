@@ -7,94 +7,68 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
-         WindowStyle="None"
-        Title="AddUserWindow" Height="550" Width="325" MaxHeight="550" MinHeight="550" MaxWidth="325" MinWidth="325">
-    <Window.Resources>
-        <Style x:Key="ComboBoxItemStyle" TargetType="{x:Type ComboBoxItem}">
-            <Setter Property="Background" Value="#FF88B6D6"/>
-            <!-- Установите желаемый фон -->
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-                        <Border Background="{TemplateBinding Background}" Padding="5">
-                            <ContentPresenter/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-    <Grid Background="#FF88B6D6">
+        mc:Ignorable="d" 
+      d:DesignHeight="430" d:DesignWidth="580" MaxHeight="430" MinHeight="430" MaxWidth="580" MinWidth="580"
+      Title="TestPage2"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="20"
+      FontFamily="Cascadia Code">
 
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="185*"/>
-            <RowDefinition Height="96*"/>
-            <RowDefinition Height="96*"/>
-            <RowDefinition Height="86*"/>
-            <RowDefinition Height="56*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Добавление пользователя"
-                       x:Name="DialogTitleTb"
-                       TextWrapping="Wrap"
-                       TextAlignment="Center"
-                       FontWeight="SemiBold"
-                       FontSize="24" Margin="41,0,36,113" />
-        <materialDesign:PackIcon Kind="Users" Width="240" Height="131" Foreground="Black" VerticalAlignment="Center" Margin="41,54,0,0"/>
-
-        <Label Content="Логин" HorizontalAlignment="Center" Margin="16,10,233,0" Grid.Row="2" VerticalAlignment="Top" Foreground="Black" FontSize="20" Height="33" Width="68"        
-               Style="{StaticResource MaterialDesignLabel}"/>
-
-        <Button
-        Tag="Plus" Content="Добавить"
-        x:Name="FormBtn" Height="Auto"
-        Margin="96,16,96,10" Grid.Row="4" Click="FormBtn_Click" />
-
-
-        <Label Content="Пароль" HorizontalAlignment="Center" Margin="16,10,217,0" Grid.Row="3" VerticalAlignment="Top" Foreground="Black" FontSize="20" Height="33" Width="84"        
-            Style="{StaticResource MaterialDesignLabel}"/>
-        <Label Content="Роль" HorizontalAlignment="Center" Margin="16,10,239,0" Grid.Row="1" VerticalAlignment="Top" Foreground="Black" FontSize="20" Height="33" Width="62"        
-            Style="{StaticResource MaterialDesignLabel}"/>
-
-
-        <TextBox x:Name="Tb1" HorizontalAlignment="Left" Height="28" Margin="18,57,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" materialDesign:HintAssist.Hint="Введите логин" 
-                             Foreground="Black" VerticalContentAlignment="Center"
-                             ToolTip="Введите логин" Background="{x:Null}" />
-
-        <TextBox x:Name="Tb2" HorizontalAlignment="Left" Height="28" Margin="16,52,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" materialDesign:HintAssist.Hint="Введите пароль" 
-                             Foreground="Black" VerticalContentAlignment="Center"
-                             ToolTip="Введите пароль" Background="{x:Null}" />
 
 
 
-        <ComboBox x:Name="Cb1" HorizontalAlignment="Left" Margin="16,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="289" materialDesign:HintAssist.Hint="Выберите роль"
-                    SelectedValuePath="IdRole"
-                  SelectedItem="{Binding Role}"
-                  DisplayMemberPath="NameRole" Background="#FF88B6D6">
-            <ComboBox.ItemContainerStyle>
-                <StaticResource ResourceKey="ComboBoxItemStyle"/>
-            </ComboBox.ItemContainerStyle>
-        </ComboBox>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
 
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top"
-                            Orientation="Horizontal">
-            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
-                            Height="24"
-                            Margin="8 0 0 0"
-                            Width="22"
-                            Content="{md:PackIcon Kind=Close}" Background="White" Click="Button_Click_1"/>
+            <Label Content="Добавление пользователя" Grid.Row="1" Grid.Column="1" FontSize="30" Height="60" HorizontalAlignment="Center"/>
+
+            <Border Height="2" Background="Black"/>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <Label Content="Логин" FontSize="20"/>
+                    <TextBox x:Name="Tb1" Width="240" Height="40"/>
+
+                    <Label Content="Пароль" FontSize="20"/>
+                    <TextBox x:Name="Tb2" Width="240" Height="40"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <Label Content="Роль" FontSize="20"/>
+                    <ComboBox x:Name="Cb1" Width="240" Height="40"
+                              SelectedItem="{Binding NameRole}"
+                              SelectedValuePath="IdRole"
+                              DisplayMemberPath="NameRole"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="10"/>
+            </StackPanel>
+
+            <Border Height="2" Background="Black"/>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Margin="10"/>
+
+                <StackPanel Orientation="Vertical" />
+            </StackPanel>
+
+            <Button Width="260" Height="60" ToolTip="Нажмите чтобы добавить" x:Name="btnAdd" BorderBrush="{x:Null}" Background="#FFD47AE8" 
+        Content="Добавить" Foreground="White" VerticalAlignment="Bottom" FontSize="20" Margin="30" Click="FormBtn_Click"/>
+
         </StackPanel>
 
-
-
-
-
-
-
-
     </Grid>
-</Window>
+    </Window>
